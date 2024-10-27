@@ -5,9 +5,9 @@ import User from '@/models/User';
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, name } = await request.json();
+    const { email, password: userPassword, name } = await request.json();
 
-    if (!email || !password || !name) {
+    if (!email || !userPassword || !name) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -16,7 +16,6 @@ export async function POST(request: NextRequest) {
 
     await connectDB();
 
-    // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return NextResponse.json(
@@ -25,20 +24,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Hash password
-    const hashedPassword = await hash(password, 12);
+    const hashedPassword = await hash(userPassword, 12);
 
-    // Create user
     const user = await User.create({
       email,
       name,
       password: hashedPassword,
     });
 
-    // Remove password from response by copying other properties
-    const { password: passwordToRemove, ...userWithoutPassword } = user.toObject();
+    const userObject = user.toObject();
+    delete userObject.password; // Explicitly remove password
 
-    return NextResponse.json(userWithoutPassword, { status: 201 });
+    return NextResponse.json(userObject, { status: 201 });
   } catch (error) {
     console.error('Registration error:', error);
     return NextResponse.json(

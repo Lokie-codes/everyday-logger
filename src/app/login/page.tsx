@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { useTheme } from '@/contexts/ThemeContext';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
