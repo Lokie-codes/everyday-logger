@@ -4,7 +4,7 @@ import connectDB from '@/lib/mongodb';
 import Task from '@/models/Task';
 import TaskCompletion from '@/models/TaskCompletion';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 import { Task as TaskType } from '@/types/common';
 
 interface CompletionsMap {
