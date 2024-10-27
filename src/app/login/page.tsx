@@ -16,7 +16,6 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const { signIn } = useAuth();
   const router = useRouter();
-  const { theme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +67,7 @@ export default function LoginPage() {
         </form>
 
         <p className="text-center text-sm">
-          Don't have an account?{' '}
+        Don&#39;t have an account?{' '}
           <Link href="/register" className="text-blue-600 hover:underline">
             Register
           </Link>

@@ -25,11 +25,3 @@ export interface ITaskCompletionDocument extends Omit<ITaskCompletion, "_id">, D
     _id: Types.ObjectId;
 }
 
-interface FormattedTask {
-  id: string;
-  name: string;
-  completions: {
-    date: string;
-    completed: boolean;
-  }[];
-}

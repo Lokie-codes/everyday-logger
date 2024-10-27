@@ -9,7 +9,7 @@ export default withAuth({
     newUser: "/register" // For first-time users
   },
   callbacks: {
-    authorized: ({ req, token }) => {
+    authorized: ({ token }) => {
       // Add custom authorization logic if needed
       return !!token
     }

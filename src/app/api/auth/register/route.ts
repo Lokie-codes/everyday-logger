@@ -35,8 +35,8 @@ export async function POST(request: NextRequest) {
       password: hashedPassword,
     });
 
-    // Remove password from response
-    const { password: _, ...userWithoutPassword } = user.toObject();
+    // Remove password from response by copying other properties
+    const { password: passwordToRemove, ...userWithoutPassword } = user.toObject();
 
     return NextResponse.json(userWithoutPassword, { status: 201 });
   } catch (error) {

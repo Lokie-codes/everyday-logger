@@ -1,5 +1,4 @@
-// hooks/useTasks.ts
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Task, UpdateCompletionPayload } from "@/types/common";
 import { getDatesInRange } from "@/lib/dates";
 
@@ -8,7 +7,8 @@ export function useTasks(weekStart: Date) {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchTasks = async (): Promise<void> => {
+  // Memoize fetchTasks using useCallback
+  const fetchTasks = useCallback(async (): Promise<void> => {
     try {
       setLoading(true);
       const response = await fetch(
@@ -38,7 +38,7 @@ export function useTasks(weekStart: Date) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [weekStart]); // Add weekStart as a dependency
 
   const addTask = async (name: string): Promise<void> => {
     try {
@@ -91,7 +91,7 @@ export function useTasks(weekStart: Date) {
 
   useEffect(() => {
     fetchTasks();
-  }, [weekStart]);
+  }, [fetchTasks]); // Use fetchTasks as a dependency
 
   return { tasks, loading, error, addTask, updateTaskCompletion };
 }
