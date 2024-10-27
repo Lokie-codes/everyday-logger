@@ -1,0 +1,243 @@
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
+
+export default function Home() {
+  return (
+    <main>
+      <h1 className="flex justify-center text-2xl py-1">My Tasks</h1>
+      <Table>
+        <TableCaption>Everyday tasks logged in one place.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[200px]">Tasks</TableHead>
+            <TableHead>Monday</TableHead>
+            <TableHead>Tuesday</TableHead>
+            <TableHead>Wednesday</TableHead>
+            <TableHead>Thursday</TableHead>
+            <TableHead>Friday</TableHead>
+            <TableHead>Saturday</TableHead>
+            <TableHead>Sunday</TableHead>
+          </TableRow>
+          <TableRow>
+            <TableHead className="w-[200px]"></TableHead>
+            <TableHead>23/07/2024</TableHead>
+            <TableHead>24/07/2024</TableHead>
+            <TableHead>25/07/2024</TableHead>
+            <TableHead>26/07/2024</TableHead>
+            <TableHead>27/07/2024</TableHead>
+            <TableHead>28/07/2024</TableHead>
+            <TableHead>29/07/2024</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell className="font-medium">Wake up at 6.30AM</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Medidate for 5 mins.</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Go To Gym</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Go for walking</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">
+              Have Breakfast by 9.30AM
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">
+              Solve 1 Leetcode Problem
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Have Lunch by 1.00PM</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Apply for a Job</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">
+              Work on Project for 30mins.
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Have Dinner by 9.30PM</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Sleep by 10.00PM</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Watch a Movie</TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </main>
+  );
+}
